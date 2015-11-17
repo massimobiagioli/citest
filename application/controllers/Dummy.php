@@ -5,8 +5,12 @@ class Dummy extends CI_Controller {
 	
     public function test()
     {
-            echo "Dummy Test Route";
+        echo "Dummy Test Route";
     }
-
+    
+    public function primeui() {
+        $this->load->helper('url');
+        $this->load->view('primeui');
+    }
     
 }
