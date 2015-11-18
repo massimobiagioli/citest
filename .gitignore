@@ -29,3 +29,4 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 # Project
 .htaccess
 assets/bower_components
+application/config/config.php
