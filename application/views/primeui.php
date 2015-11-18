@@ -25,5 +25,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <h1>PrimeUI test</h1>
         <div id="main"></div>
         <?php echo base_url(); ?>
+        <?php print_r($results, FALSE); ?>
     </body>
 </html>
