@@ -12,12 +12,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/bower_components/jqueryui/themes/redmond/jquery-ui.min.css">
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/bower_components/jqueryui/themes/redmond/theme.css">
-        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/bower_components/primeui/primeui-2.1-min.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/components/primeui/primeui-2.1-min.css">
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/resources/font-awesome-4.4.0/css/font-awesome.min.css" />
         
         <script type="text/javascript">
             $(function() {
-               alert("it works!!!"); 
+               //
             });
         </script>
     </head>
