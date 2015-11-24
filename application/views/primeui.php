@@ -17,14 +17,40 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         
         <script type="text/javascript">
             $(function() {
-               //
+                $('#dataGridSogg').puidatatable({
+                    lazy: true,
+                    caption: 'Soggetti',
+                    paginator: {
+                        rows: 10,
+                        totalRecords: 200
+                    },
+                    columns: [
+                        {field:'progsogg', headerText: 'ID', sortable:true},
+                        {field:'ragsoc', headerText: 'Ragione sociale', sortable:true},
+                        {field:'codfiscale', headerText: 'Cod. fiscale', sortable:true}
+                    ],
+                    datasource: function(callback, ui) {
+                        var uri = '<?php echo base_url(); ?>' + 'Dummy/load/' + ui.first;
+                        if(ui.sortField) {
+                            uri += '/' + ui.sortField + '/' + ui.sortOrder;
+                        }
+
+                        $.ajax({
+                            type: "GET",
+                            url: uri,
+                            dataType: "json",
+                            context: this,
+                            success: function(response) {
+                                callback.call(this, response);
+                            }
+                        });
+                    }
+                });
             });
         </script>
     </head>
     <body>
-        <h1>PrimeUI test</h1>
-        <div id="main"></div>
-        <?php echo base_url(); ?>
-        <?php print_r($results, FALSE); ?>
+        <h1>PrimeUI test</h1>        
+        <div id="dataGridSogg"></div>        
     </body>
 </html>

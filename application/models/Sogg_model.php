@@ -2,8 +2,8 @@
 
 class Sogg_model extends CI_Model {
     
-    public function read() {
-        $query = $this->db->get('bta_sogg', 10);
+    public function read($offset) {
+        $query = $this->db->get('bta_sogg', 10, $offset);
         return $query->result();
     }
         
