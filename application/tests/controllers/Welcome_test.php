@@ -32,4 +32,17 @@ class Welcome_test extends TestCase
 			'Your APPPATH seems to be wrong. Check your $application_folder in tests/Bootstrap.php'
 		);
 	}
+        
+        public function test_DummyController() {
+            $dummy = new Dummy();
+            $dummy->load->model('sogg_model', 'sogg', TRUE);            
+            $data['results'] = $dummy->sogg->read();
+            $this->assertNotNull($data, "Errore lettura dati");
+        }
+        
+        public function test_Model() {
+            $model = new Sogg_model();
+            $data['results'] = $model->read();
+            $this->assertNotNull($data, "Errore lettura dati");
+        }
 }
