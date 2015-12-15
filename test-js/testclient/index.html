@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TEST API</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript">
+            var serverUrl = "http://localhost:5001",
+            	deviceUUID = 'testclient';
+            
+            function query() {
+            	$.ajax({
+                    type: "GET",
+                    url: serverUrl + "/api/Soggetto/xyz",
+                })
+                .done(function(result) {
+                    console.log(result);
+                });     
+            }
+            
+        </script>
+    </head>
+    <body>        
+        <h1>TEST API</h3>
+        
+        <h3>Query</h3>
+        
+        <div>            
+            <button onclick="query()">QUERY</button>            
+        </div>
+        
+    </body>
+</html>
