@@ -12,13 +12,16 @@ class Soggetto extends API_Controller {
     
     public function query($filters) {
         parent::query($filters);
+        //var_dump($this->input);
         echo "query - filters=$filters";     
     }
     
     public function insert() {
         parent::insert();
-        $data = print_r($_POST, true);
-        echo "insert - data=" . $data ;     
+        $authKey = $this->input->request_headers()['X-AUTH'];        
+        $authKey = $this->input->request_headers()['X-AUTH'];        
+        $data = print_r($_POST, true);        
+        echo "insert - data=" . $data . "  - AUTH-KEY: " . $authKey;
     }
     
     public function update($id) {
